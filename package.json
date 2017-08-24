@@ -1,26 +1,21 @@
 {
   "name": "hackaton",
-  "version": "1.0.0",
-  "description": "Example application for hackaton blockchain",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/izetex/hackaton.git"
-  },
-  "keywords": [
-    "blockchain",
-    "hackaton"
-  ],
-  "author": "Izetex",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/izetex/hackaton/issues"
-  },
-  "homepage": "https://github.com/izetex/hackaton#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
+    "web3": "^0.20.1",
+    "ethereumjs-abi": "^0.6.4",
+    "ethereumjs-wallet": "^0.6.0",
+    "web3-provider-engine": "^13.2.8"
   }
 }

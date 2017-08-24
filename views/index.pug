@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(class='col-xs-12')
+    h2 Get balance
+    form(class='form form-inline', action='/balance')
+      div(class='form-group')
+        label(for='adr1') Wallet address:
+        input(type='text', name="address", class="form-control wallet_addr text-right",value=default_addr)
+      button(type='submit',class='btn btn-success') Get Balance
+    h2 Make transfer
+    form(class='form form-inline', action='/send')
+      div(class='form-group')
+        label Send to address:
+        input(type='text', name="address",class="form-control wallet_addr text-right",placeholder: 'destination address')
+      div(class='form-group')
+        input(type='text', name='amount', class="form-control amount text-right",value='0.0001')
+        div(class='input-group-addon') ETH
+      button(type='submit',class='btn btn-success') Send
