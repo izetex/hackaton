@@ -45,7 +45,7 @@ router.post('/send', function(req, res){
     if(!address){
         res.send({time: Date.now(), address: address, result: 'Адрес не указан', state: 'warning' });
         return;
-    }else if(!amount || amount > 0.01){
+    }else if(!amount || amount > 10){
         res.send({time: Date.now(), address: address, result: 'Сумма неверная', state: 'warning'  });
         return;
     }

@@ -32,7 +32,7 @@ function addData(method, data, result){
 
     var str = '<tr class="text-'+data.state+'">'+
         '<td>'+method+'</td><td>'+getFormattedTime(data.time)+'</td>'+
-        '<td><a href="https://ropsten.etherscan.io/'+data.address+'"><span>'+data.address+'</a></td>'+
+        '<td><a href="https://ropsten.etherscan.io/address/'+data.address+'"><span>'+data.address+'</a></td>'+
         '<td>'+(data.tx ? '<a class="address" href="https://ropsten.etherscan.io/tx/'+data.tx+'">'+data.tx+'</a>' : '-') + '</td>' +
         '<td>'+result+'</td></tr>';
 
