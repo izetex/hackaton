@@ -3,17 +3,28 @@ extends layout
 block content
   div(class='col-xs-12')
     h2 Get balance
-    form(class='form form-inline', action='/balance')
+    form(class='form form-inline', action='/balance', id='balance_form')
       div(class='form-group')
         label(for='adr1') Wallet address:
         input(type='text', name="address", class="form-control wallet_addr text-right",value=default_addr)
-      button(type='submit',class='btn btn-success') Get Balance
+      input(type='submit',class='btn btn-success',value='Get Balance')
     h2 Make transfer
-    form(class='form form-inline', action='/send')
+    form(class='form form-inline', action='/send', id='send_form')
       div(class='form-group')
         label Send to address:
         input(type='text', name="address",class="form-control wallet_addr text-right",placeholder: 'destination address')
       div(class='form-group')
         input(type='text', name='amount', class="form-control amount text-right",value='0.0001')
         div(class='input-group-addon') ETH
-      button(type='submit',class='btn btn-success') Send
+      input(type='submit',class='btn btn-success',value='Send')
+    h2 Results
+    table(class='table',id='results')
+      thead
+        tr
+          th Operation
+          th Timestamp
+          th Address
+          th Result
+      tbody
+        tr(id='no_results')
+          td No results yet

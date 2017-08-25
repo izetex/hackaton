@@ -9,6 +9,7 @@
 
 .wallet_addr {
     min-width: 450px;
+    margin-left: 10px;
 }
 
 .amount {
