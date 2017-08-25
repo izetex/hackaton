@@ -14,24 +14,45 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/balance', function(req, res){
+
+
     var address = req.query.address;
     const web3 = new Web3(new Web3.providers.HttpProvider(provider_url));
-
 
     web3.eth.getBalance(address,
         function(error, result){
 
             if(error || !result) {
                 console.log('ERROR '+error);
-                res.send({time: Date.now(), address: address, balance: error });
+                res.send({time: Date.now(), address: address, balance: error, state: 'danger'  });
             }else{
                 var balance = web3.fromWei(result);
                 console.log('BALANCE of '+address+' = '+balance + ' ETH');
-                res.send({time: Date.now(), address: address, balance: balance });
+                res.send({time: Date.now(), address: address, balance: balance, state: 'success'  });
             }
         }
     );
 
+
+});
+
+
+router.post('/send', function(req, res){
+
+    var address = req.body.address;
+    var amount = req.body.amount;
+
+    if(!address){
+        res.send({time: Date.now(), address: address, result: 'Адрес не указан', state: 'warning' });
+        return;
+    }else if(!amount || amount > 0.01){
+        res.send({time: Date.now(), address: address, result: 'Сумма неверная', state: 'warning'  });
+        return;
+    }
+
+
+
+    res.send({time: Date.now(), address: address, result: 'ok' });
 
 });
 
